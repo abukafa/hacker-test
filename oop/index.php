@@ -85,7 +85,7 @@ class Komik extends Produk
     }
     public function getInfoProduk()
     {
-        return "Komik : " . parent::getInfoProduk() . " - {$this->hal} Jam.";       // OVERIDING @ INHERITANCE - pewarisan - mengambil fungsi dari parent nya
+        return "Komik : " . parent::getInfoProduk() . " - {$this->hal} Hal.";       // OVERIDING @ INHERITANCE - pewarisan - mengambil fungsi dari parent nya
     }
 }
 
