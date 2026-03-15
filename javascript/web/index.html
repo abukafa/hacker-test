@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacker Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind = { config: { darkMode: "class" } };
+    </script>
+  </head>
+  <body class="min-h-screen bg-white dark:bg-gray-800 p-6">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+      Happy Hacking!
+    </h1>
+    <p class="text-gray-500 dark:text-gray-400">Check Console..</p>
+
+    <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+    <form id="form" class="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <label class="sr-only" for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Type your name"
+        class="rounded-md px-3 py-2 border border-gray-300 bg-white text-gray-900 placeholder-gray-400 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+      />
+      <button
+        type="submit"
+        class="rounded-md px-4 py-2 text-sm font-semibold bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+      >
+        Click me
+      </button>
+    </form>
+
+    <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+    <form>
+      <input
+        type="text"
+        id="interviewName"
+        placeholder="Name"
+        class="rounded-md px-3 py-2 border border-gray-300 bg-white text-gray-900 placeholder-gray-400 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+      />
+      <input
+        type="text"
+        id="interviewGaji"
+        placeholder="Gaji"
+        class="rounded-md px-3 py-2 border border-gray-300 bg-white text-gray-900 placeholder-gray-400 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+      />
+      <button
+        id="interviewSubmit"
+        class="rounded-md px-3 py-2 bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+      >
+        Submit
+      </button>
+      <div id="interviewResult"></div>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+      document.body.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+
+      const interviewResult = document.getElementById("interviewResult");
+      const interviewSubmit = document.getElementById("interviewSubmit");
+      interviewSubmit.addEventListener("click", function (e) {
+        e.preventDefault();
+        const interviewName = document.getElementById("interviewName").value;
+        const interviewGaji = document.getElementById("interviewGaji").value;
+        interviewResult.innerHTML = `
+            <p>Name: ${interviewName}</p>
+            <p>Gaji: ${interviewGaji}</p>
+            <p>Pajak: 5%</p>
+            <p>Total: ${interviewGaji - interviewGaji * 0.05}</p>
+        `;
+      });
+
+      const form = document.getElementById("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        alert("Hello, " + name);
+      });
+
+      const h1 = document.getElementsByTagName("h1");
+      const p = document.getElementsByTagName("p");
+      let useA = true;
+      function toggleHandler() {
+        if (useA) {
+          p[0].innerHTML = `Wellcome Back to Javascript`;
+        } else {
+          p[0].innerHTML = `Check Console..`;
+        }
+        useA = !useA;
+      }
+      h1[0].addEventListener("click", toggleHandler);
+
+      let desc = [2, 5, 1, 7, 5, 8, 9, 0].sort((a, b) => b - a);
+    </script>
+  </body>
+</html>

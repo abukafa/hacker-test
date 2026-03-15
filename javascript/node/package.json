@@ -1,0 +1,11 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "hackerank",
+  "main": "index.js",
+  "scripts": {
+    "test": "run"
+  },
+  "author": "abukafa",
+  "license": "ISC"
+}
